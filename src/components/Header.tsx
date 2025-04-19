@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
@@ -33,7 +32,7 @@ const Header: React.FC = () => {
         {/* Logo & Brand */}
         <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            StudentPulse
+            HedWig
           </span>
         </Link>
 

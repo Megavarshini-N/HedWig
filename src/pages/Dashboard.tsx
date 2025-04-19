@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useEvents } from '@/context/EventContext';
 import { useAuth } from '@/context/AuthContext';
@@ -39,7 +38,7 @@ const Dashboard: React.FC = () => {
         <section className="mb-8">
           <div className="glass-card p-6 md:p-8">
             <h1 className="text-2xl md:text-3xl font-bold mb-2">
-              {user ? `Welcome back, ${user.name.split(' ')[0]}!` : 'Welcome to Student Pulse Connect'}
+              {user ? `Welcome back, ${user.name.split(' ')[0]} to HedWig!` : 'Welcome to HedWig'}
             </h1>
             <p className="text-muted-foreground max-w-2xl">
               Your hub for campus events. Discover, join, and connect with activities that interest you.
