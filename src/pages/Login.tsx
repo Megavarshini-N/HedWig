@@ -19,38 +19,37 @@ const Login: React.FC = () => {
     setIsLoading(true);
     
     try {
-      // For demo purposes, any password will work, email must match mock data
+      if (!email.endsWith('@skasc.ac.in')) {
+        throw new Error('Please use your university email (@skasc.ac.in)');
+      }
+      
       const success = await login(email, password);
       if (success) {
-        navigate('/');
+        navigate('/dashboard');
       } else {
         setError('Invalid email or password');
       }
-    } catch (err) {
-      setError('An error occurred during login');
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during login');
       console.error(err);
     } finally {
       setIsLoading(false);
     }
   };
 
-  // For demo purposes, you can use:
-  // Email: jane@university.edu or mike@university.edu
-  // Password: any password will work since we're just checking if the email exists
-  
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
             HedWig
           </h1>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted-foreground">
             Sign in to access your campus events
           </p>
         </div>
         
-        <div className="bg-card border border-border rounded-xl shadow-sm p-6">
+        <div className="glass-card p-8 backdrop-blur-lg">
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
               <div className="bg-destructive/10 text-destructive text-sm p-3 rounded-md">
@@ -60,14 +59,16 @@ const Login: React.FC = () => {
             
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm font-medium">
-                Email
+                University Email
               </label>
               <input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="yourname@university.edu"
+                placeholder="yourname@skasc.ac.in"
+                pattern=".*@skasc\.ac\.in$"
+                title="Please enter your SKASC email address"
                 required
                 className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
@@ -101,22 +102,20 @@ const Login: React.FC = () => {
               </div>
             </div>
             
-            <div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-primary text-primary-foreground py-2 rounded-md font-medium hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
-              >
-                {isLoading ? (
-                  <div className="flex items-center justify-center">
-                    <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                    Signing in...
-                  </div>
-                ) : (
-                  'Sign In'
-                )}
-              </button>
-            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-primary text-primary-foreground py-2 rounded-md font-medium hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  Signing in...
+                </div>
+              ) : (
+                'Sign In'
+              )}
+            </button>
             
             <div className="text-center text-sm">
               <span className="text-muted-foreground">Don't have an account? </span>
@@ -125,15 +124,13 @@ const Login: React.FC = () => {
               </Link>
             </div>
           </form>
-          
-          <div className="mt-6 pt-4 border-t border-border">
-            <div className="text-center text-sm text-muted-foreground">
-              <p>Demo accounts:</p>
-              <p className="mt-1">jane@university.edu</p>
-              <p>mike@university.edu</p>
-              <p className="mt-2">Any password will work for demo purposes</p>
-            </div>
-          </div>
+        </div>
+        
+        <div className="mt-6 text-center text-sm text-muted-foreground">
+          <p>Demo accounts:</p>
+          <p className="mt-1">jane@skasc.ac.in</p>
+          <p>mike@skasc.ac.in</p>
+          <p className="mt-2">Any password will work for demo purposes</p>
         </div>
       </div>
     </div>

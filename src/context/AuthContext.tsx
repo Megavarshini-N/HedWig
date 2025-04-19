@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User } from '@/types';
 
@@ -18,7 +17,7 @@ const mockUsers: User[] = [
   {
     id: '1',
     name: 'Jane Smith',
-    email: 'jane@university.edu',
+    email: 'jane@skasc.ac.in',
     department: 'Computer Science',
     year: '3',
     interests: ['tech', 'career', 'seminar'],
@@ -28,7 +27,7 @@ const mockUsers: User[] = [
   {
     id: '2',
     name: 'Mike Johnson',
-    email: 'mike@university.edu',
+    email: 'mike@skasc.ac.in',
     department: 'Business Administration',
     year: '2',
     interests: ['sports', 'social', 'cultural'],
@@ -57,6 +56,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
     try {
+      // Validate university email
+      if (!email.endsWith('@skasc.ac.in')) {
+        throw new Error('Please use your university email (@skasc.ac.in)');
+      }
+
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
@@ -71,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return false;
     } catch (error) {
       console.error('Login error:', error);
-      return false;
+      throw error;
     } finally {
       setIsLoading(false);
     }

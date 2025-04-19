@@ -29,16 +29,15 @@ const App = () => (
               <Sonner />
               <BrowserRouter>
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
+                  {/* Redirect root to login if not authenticated */}
+                  <Route path="/" element={<Navigate to="/login" />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/events" element={<Events />} />
                   <Route path="/events/:id" element={<EventDetail />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/my-schedule" element={<MySchedule />} />
-                  {/* Redirect /index to / */}
-                  <Route path="/index" element={<Navigate to="/" replace />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
