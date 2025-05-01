@@ -22,7 +22,7 @@ const mockUsers: User[] = [
     year: '3',
     interests: ['tech', 'career', 'seminar'],
     eventsAttended: ['1', '3', '5'],
-    profileImageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmUlMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D'
+    profileImageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
   },
   {
     id: '2',
@@ -32,7 +32,27 @@ const mockUsers: User[] = [
     year: '2',
     interests: ['sports', 'social', 'cultural'],
     eventsAttended: ['2', '4'],
-    profileImageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGUlMjBwaWN0dXJlJTIwbWFufGVufDB8fDB8fHww'
+    profileImageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
+  },
+  {
+    id: '3',
+    name: 'Priya Patel',
+    email: 'priya@skasc.ac.in',
+    department: 'Electronics Engineering',
+    year: '4',
+    interests: ['tech', 'cultural', 'career'],
+    eventsAttended: ['1', '5', '6'],
+    profileImageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
+  },
+  {
+    id: '4',
+    name: 'Alex Chen',
+    email: 'alex@skasc.ac.in',
+    department: 'Computer Science',
+    year: '3',
+    interests: ['tech', 'seminar'],
+    eventsAttended: ['3', '7'],
+    profileImageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=250&h=250&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
   }
 ];
 
