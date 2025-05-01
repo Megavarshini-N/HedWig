@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +16,7 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import MySchedule from "./pages/MySchedule";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -29,15 +31,41 @@ const App = () => (
               <Sonner />
               <BrowserRouter>
                 <Routes>
-                  {/* Redirect root to login if not authenticated */}
+                  {/* Redirect root to login */}
                   <Route path="/" element={<Navigate to="/login" />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/events" element={<Events />} />
-                  <Route path="/events/:id" element={<EventDetail />} />
+                  
+                  {/* Public routes */}
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/my-schedule" element={<MySchedule />} />
+                  
+                  {/* Protected routes */}
+                  <Route path="/dashboard" element={
+                    <ProtectedRoute>
+                      <Dashboard />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/events" element={
+                    <ProtectedRoute>
+                      <Events />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/events/:id" element={
+                    <ProtectedRoute>
+                      <EventDetail />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/profile" element={
+                    <ProtectedRoute>
+                      <Profile />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/my-schedule" element={
+                    <ProtectedRoute>
+                      <MySchedule />
+                    </ProtectedRoute>
+                  } />
+                  
+                  {/* 404 page */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>

@@ -1,5 +1,7 @@
+
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User } from '@/types';
+import { toast } from '@/components/ui/use-toast';
 
 interface AuthContextType {
   user: User | null;
@@ -90,6 +92,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       if (foundUser) {
         setUser(foundUser);
         localStorage.setItem('user', JSON.stringify(foundUser));
+        toast({
+          title: `Welcome back, ${foundUser.name}!`,
+          description: "You've successfully signed in",
+        });
         return true;
       }
       return false;
@@ -104,6 +110,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');
+    toast({
+      title: "Signed out",
+      description: "You've been successfully logged out",
+    });
   };
 
   const register = async (userData: Omit<User, 'id' | 'eventsAttended'>): Promise<boolean> => {
@@ -132,6 +142,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Auto-login the new user
       setUser(newUser);
       localStorage.setItem('user', JSON.stringify(newUser));
+      
+      toast({
+        title: `Welcome to HedWig, ${newUser.name}!`,
+        description: "Your account has been created successfully",
+      });
       
       return true;
     } catch (error) {
