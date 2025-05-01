@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -89,13 +90,26 @@ export default {
 					900: '#0c4a6e',
 					950: '#082f49',
 				},
+				teal: {
+					50: '#f0fdfa',
+					100: '#ccfbf1',
+					200: '#99f6e4',
+					300: '#5eead4',
+					400: '#2dd4bf',
+					500: '#14b8a6', // Teal accent
+					600: '#0d9488',
+					700: '#0f766e',
+					800: '#115e59',
+					900: '#134e4a',
+					950: '#042f2e',
+				},
 				orange: {
 					50: '#fff7ed',
 					100: '#ffedd5',
 					200: '#fed7aa',
 					300: '#fdba74',
 					400: '#fb923c',
-					500: '#f97316', // Accent/CTA orange
+					500: '#f97316', // Orange accent
 					600: '#ea580c',
 					700: '#c2410c',
 					800: '#9a3412',
@@ -168,6 +182,11 @@ export default {
 						transform: 'translateY(-3px)',
 					},
 				},
+				'shimmer': {
+					'100%': {
+						transform: 'translateX(100%)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -176,7 +195,14 @@ export default {
 				'slide-in': 'slide-in 0.3s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'bounce-gentle': 'bounce-gentle 2s infinite ease-in-out',
-			}
+				'shimmer': 'shimmer 2s infinite',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-pattern': "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+				'event-pattern': "url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+				'tech-pattern': "url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

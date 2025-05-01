@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 @layer base {
   :root {
     /* Base */
-    --background: 0 0% 100%;
+    --background: 220 70% 98%;
     --foreground: 222.2 84% 4.9%;
 
     /* Cards */
@@ -20,8 +21,8 @@
     --primary: 263 90% 66%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary - Blue */
-    --secondary: 200 97% 48%;
+    /* Secondary - Teal */
+    --secondary: 180 70% 45%;
     --secondary-foreground: 210 40% 98%;
 
     /* Muted */
@@ -42,7 +43,7 @@
     --ring: 263 90% 66%;
 
     /* Radius */
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -72,8 +73,8 @@
     --primary: 263 90% 66%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary - Blue */
-    --secondary: 200 97% 48%;
+    /* Secondary - Teal */
+    --secondary: 180 70% 45%;
     --secondary-foreground: 210 40% 98%;
 
     /* Muted */
@@ -192,5 +193,40 @@
   
   .nav-item-active {
     @apply bg-secondary/10 text-secondary font-medium;
+  }
+  
+  /* Loader */
+  .skeleton {
+    @apply relative overflow-hidden bg-muted/30 after:absolute after:inset-0 after:-translate-x-full after:animate-shimmer after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent;
+  }
+  
+  /* New gradient cards */
+  .gradient-card {
+    @apply bg-gradient-to-br from-purple-500/10 to-blue-500/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl;
+  }
+  
+  .gradient-card-teal {
+    @apply bg-gradient-to-br from-teal-500/10 to-blue-500/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl;
+  }
+  
+  .gradient-card-orange {
+    @apply bg-gradient-to-br from-orange-500/10 to-yellow-500/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl;
+  }
+  
+  /* Share buttons */
+  .share-button {
+    @apply flex items-center justify-center p-2 rounded-full transition-transform hover:scale-110;
+  }
+  
+  .share-button-whatsapp {
+    @apply bg-[#25D366] text-white;
+  }
+  
+  .share-button-facebook {
+    @apply bg-[#3b5998] text-white;
+  }
+  
+  .share-button-instagram {
+    @apply bg-gradient-to-tr from-[#fd5949] via-[#d6249f] to-[#285AEB] text-white;
   }
 }
