@@ -49,7 +49,7 @@ const Login: React.FC = () => {
     <div className="min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Left Panel - SKASC Campus Image with blue-purple gradient overlay */}
       <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-primary/80 to-secondary/80 p-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/34305108-e01f-4643-ab00-83185597550d.png')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/003b5260-fad2-4ce5-ba11-fe4c86d135c8.png')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
         <div className="relative z-10 flex flex-col justify-between h-full text-white">
           <div>
             <h1 className="text-5xl font-bold mb-4">HedWig</h1>
