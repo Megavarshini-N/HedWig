@@ -48,9 +48,14 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Left Panel - Image */}
-      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-purple-600/80 to-blue-600/80 p-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/be1d6dc6-e0bc-4863-b541-aadeff239457.png')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
-        <div className="relative z-10 flex flex-col justify-between h-full text-white">
+      <div className="hidden md:flex md:w-1/2 relative overflow-hidden">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/be1d6dc6-e0bc-4863-b541-aadeff239457.png')] bg-cover bg-center"></div>
+        
+        {/* Gradient Overlay with reduced opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/40 to-blue-600/40"></div>
+        
+        <div className="relative z-10 flex flex-col justify-between h-full text-white p-8">
           <div>
             <h1 className="text-5xl font-bold mb-4">HedWig</h1>
             <p className="text-xl opacity-90">Your campus events companion</p>
