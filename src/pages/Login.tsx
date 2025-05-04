@@ -48,8 +48,8 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Left Panel - Image */}
-      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-primary/80 to-secondary/80 p-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-50 mix-blend-overlay"></div>
+      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-purple-600/80 to-blue-600/80 p-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/be1d6dc6-e0bc-4863-b541-aadeff239457.png')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
         <div className="relative z-10 flex flex-col justify-between h-full text-white">
           <div>
             <h1 className="text-5xl font-bold mb-4">HedWig</h1>

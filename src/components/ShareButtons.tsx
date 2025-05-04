@@ -5,11 +5,11 @@ import { toast } from 'sonner';
 
 interface ShareButtonsProps {
   title: string;
-  text: string;
+  text?: string; // Making text optional to fix the type errors
   url?: string;
 }
 
-const ShareButtons: React.FC<ShareButtonsProps> = ({ title, text, url }) => {
+const ShareButtons: React.FC<ShareButtonsProps> = ({ title, text = '', url }) => {
   const shareUrl = url || window.location.href;
   
   const handleShare = async (platform: string) => {
