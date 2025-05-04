@@ -49,11 +49,8 @@ const Login: React.FC = () => {
     <div className="min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Left Panel - Image */}
       <div className="hidden md:flex md:w-1/2 relative overflow-hidden">
-        {/* Background Image Layer */}
+        {/* Background Image Layer - No overlay */}
         <div className="absolute inset-0 bg-[url('/lovable-uploads/be1d6dc6-e0bc-4863-b541-aadeff239457.png')] bg-cover bg-center"></div>
-        
-        {/* Gradient Overlay with reduced opacity */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/40 to-blue-600/40"></div>
         
         <div className="relative z-10 flex flex-col justify-between h-full text-white p-8">
           <div>
